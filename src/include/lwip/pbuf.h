@@ -222,6 +222,13 @@ struct pbuf {
 
   /** In case the user needs to store data custom data on a pbuf */
   LWIP_PBUF_CUSTOM_DATA
+#if LWIP_PTP
+  /**
+   * Timestamp that this packet was received.
+   */
+  s32_t time_sec;
+  s32_t time_nsec;
+#endif
 };
 
 
